@@ -15,16 +15,18 @@ const render = require("./lib/htmlRenderer");
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
+// make inquirer . prompt functions
+
 // Questions to ask:
-// 1: What kind of employee do you want to add?
-// - Choices: Manager, Engineer, Intern
-// - Select: Manager
+// pre question 1: // - Inquirer prompt Manager
 // 2: What is their name?
 // 3: What is their ID?
 // 4: What is their email?
-// - If Manager:
 // 5: What is their office number?
-// 6. Would you like to add another employee?
+// .then push to employee array
+// call . then function to ask Would you like to add another employee?
+// - What kind of employee do you want to add?
+// - Choices: Engineer, Intern
 // -Go back to first question
 // - If Engineer:
 // 5. Enter GitHub username?
@@ -32,9 +34,8 @@ const render = require("./lib/htmlRenderer");
 // - If Intern:
 // 5. Enter school
 // 6. Would you like to add another employee?
+// once no... pass array of employee objects to render html
 
-// chain .then promises together 
-// prompt function returns a promise
 
 function newEmployee(){
     
