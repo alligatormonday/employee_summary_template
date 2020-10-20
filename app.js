@@ -34,7 +34,7 @@ const managerQs = [
         type: "input",
         name: "Office",
         message: "Enter employee's office number:",
-    },    
+    },
 ];
 
 const engineerQs = [
@@ -58,7 +58,7 @@ const engineerQs = [
         type: "input",
         name: "Github",
         message: "Enter employee's GitHub username:",
-    },    
+    },
 ];
 
 const internQs = [
@@ -82,7 +82,7 @@ const internQs = [
         type: "input",
         name: "School",
         message: "Enter employee's School:",
-    },    
+    },
 ];
 
 const addRole = {
@@ -99,17 +99,36 @@ const chooseRole = {
     choices: ["Manager", "Engineer", "Intern"],
 }
 
-function newEmployee(){
-    inquirer.prompt(chooseRole)
-    .then(answers => {
-        let employeeRole = new Employee(answers.Choose);
-        employees.push(employeeRole);
-        console.log(employees)
-    })
-    
+function newEmployee() {
+    inquirer.prompt([
+        {
+            type: "list",
+            name: "Choose",
+            message: "Choose new role you would like to add:",
+            choices: ["Manager", "Engineer", "Intern"],
+        },
+        {
+
+            type: "input",
+            name: "Name",
+            message: "Enter employee's name:",
+        },
+        {
+            type: "input",
+            name: "ID",
+            message: "Enter employee's ID:",
+        },
+        {
+            type: "input",
+            name: "Email",
+            message: "Enter employee's email:",
+        },
+
+    ])
+
 }
 
-newEmployee()
+
 
 
 // keep an array of employee objects
