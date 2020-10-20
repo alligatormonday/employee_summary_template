@@ -83,6 +83,19 @@ const internQs = [
     },    
 ];
 
+const newEmployee = {
+    type: "confirm",
+    name: "addRole",
+    message: "Would you like to add another employee?",
+    default: true,
+}
+
+const chooseEmployee = {
+    type: "list",
+    name: "chooseRole",
+    message: "Choose new role you would like to add:",
+    choices: ["Manager", "Engineer", "Intern"],
+}
 
 
 
