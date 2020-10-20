@@ -12,31 +12,6 @@ const render = require("./lib/htmlRenderer");
 const Employee = require("./lib/Employee");
 const employees = [];
 
-// array of questions for user
-const managerQs = [
-    {
-        /* Pass user questions in here */
-        type: "input",
-        name: "Name",
-        message: "Enter employee's name:",
-    },
-    {
-        type: "input",
-        name: "ID",
-        message: "Enter employee's ID:",
-    },
-    {
-        type: "input",
-        name: "Email",
-        message: "Enter employee's email:",
-    },
-    {
-        type: "input",
-        name: "Office",
-        message: "Enter employee's office number:",
-    },
-];
-
 const engineerQs = [
     {
         /* Pass user questions in here */
@@ -85,20 +60,6 @@ const internQs = [
     },
 ];
 
-const addRole = {
-    type: "confirm",
-    name: "Add",
-    message: "Would you like to add another employee?",
-    default: true,
-}
-
-const chooseRole = {
-    type: "list",
-    name: "Choose",
-    message: "Choose new role you would like to add:",
-    choices: ["Manager", "Engineer", "Intern"],
-}
-
 function newEmployee() {
     inquirer.prompt([
         {
@@ -115,7 +76,7 @@ function newEmployee() {
         },
         {
             type: "input",
-            name: "ID",
+            name: "Id",
             message: "Enter employee's ID:",
         },
         {
@@ -125,10 +86,63 @@ function newEmployee() {
         },
 
     ])
+        .then(function (answers) {
+            if (answers.Choose === "Manager") {
+                inquirer.prompt([
+                    {
 
+                        type: "input",
+                        name: "Office",
+                        message: "Enter employee's office number:",
+
+                    }
+                ])
+                    .then(function (res) {
+                        const manager = new Manager(answers.Name, answers.Id, answers.Email, res.Office);
+                        employees.push(manager);
+                        addRole();
+                    })
+            } else if (answers.Choose === "Engineer") {
+                inquirer.prompt([
+                    {
+
+                        type: "input",
+                        name: "Github",
+                        message: "Enter employee's GitHub username:",
+
+                    }
+                ])
+                    .then(function (res) {
+                        const engineer = new Engineer(answers.Name, answers.Id, answers.Email, res.Github);
+                        employees.push(engineer);
+                        addRole();
+                    })
+            }
+        })
 }
 
+function addRole() {
+    inquirer.prompt([
+        {
+            type: "confirm",
+            name: "Add",
+            message: "Would you like to add another employee?",
+            default: true,
+        }
+    ]).then(function (res) {
+        if (res.addRole) {
+            newEmployee()
+        } else {
+            const employeeData = render(employees);
+            fs.writeFile(outputPath, employeeData, function (err) {
+                if (err) throw err;
+                console.log("Added new employee(s)")
+            })
+        }
+    })
+}
 
+newEmployee();
 
 
 // keep an array of employee objects
