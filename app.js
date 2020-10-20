@@ -10,6 +10,84 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+// array of questions for user
+const managerQs = [
+    {
+        /* Pass user questions in here */
+        type: "input",
+        name: "Name",
+        message: "Enter employee's name:",
+    },
+    {
+        type: "input",
+        name: "ID",
+        message: "Enter employee's ID:",
+    },
+    {
+        type: "input",
+        name: "Email",
+        message: "Enter employee's email:",
+    },
+    {
+        type: "input",
+        name: "Office",
+        message: "Enter employee's office number:",
+    },    
+];
+
+const engineerQs = [
+    {
+        /* Pass user questions in here */
+        type: "input",
+        name: "Name",
+        message: "Enter employee's name:",
+    },
+    {
+        type: "input",
+        name: "ID",
+        message: "Enter employee's ID:",
+    },
+    {
+        type: "input",
+        name: "Email",
+        message: "Enter employee's email:",
+    },
+    {
+        type: "input",
+        name: "Github",
+        message: "Enter employee's GitHub username:",
+    },    
+];
+
+const internQs = [
+    {
+        /* Pass user questions in here */
+        type: "input",
+        name: "Name",
+        message: "Enter employee's name:",
+    },
+    {
+        type: "input",
+        name: "ID",
+        message: "Enter employee's ID:",
+    },
+    {
+        type: "input",
+        name: "Email",
+        message: "Enter employee's email:",
+    },
+    {
+        type: "input",
+        name: "School",
+        message: "Enter employee's School:",
+    },    
+];
+
+
+
+
+
+
 // keep an array of employee objects
 
 // Write code to use inquirer to gather information about the development team members,
