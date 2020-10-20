@@ -9,6 +9,8 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
+const Employee = require("./lib/Employee");
+const employees = [];
 
 // array of questions for user
 const managerQs = [
@@ -97,8 +99,17 @@ const chooseRole = {
     choices: ["Manager", "Engineer", "Intern"],
 }
 
+function newEmployee(){
+    inquirer.prompt(chooseRole)
+    .then(answers => {
+        let employeeRole = new Employee(answers.Choose);
+        employees.push(employeeRole);
+        console.log(employees)
+    })
+    
+}
 
-
+newEmployee()
 
 
 // keep an array of employee objects
@@ -128,9 +139,7 @@ const chooseRole = {
 // once no... pass array of employee objects to render html
 
 
-function newEmployee(){
-    
-}
+
 
 
 // After the user has input all employees desired, call the `render` function (required
