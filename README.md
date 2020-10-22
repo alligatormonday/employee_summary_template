@@ -2,9 +2,9 @@
 
 ## 🕹 Demo:
 
-![Demo of application](assets/good_readme_generator_DEMO.gif)
+![Demo of application](assets/employee_summary_template_DEMO.gif)
 
-Video of demo: [good_readme_generator_DEMO](https://drive.google.com/file/d/1N5kXkSQLT6YeUmCcc14qXjolgIeqwPj2/view) 
+Video of demo: [employee_summary_template_DEMO](https://drive.google.com/file/d/1BvwoQ04vJjtSgqQXfkcedO76wHiqZA66/view) 
 
 ![License](https://img.shields.io/badge/License-MIT-yellow) 
 ## 👤 Author: Joseph Jepson 
@@ -34,7 +34,7 @@ Video of demo: [good_readme_generator_DEMO](https://drive.google.com/file/d/1N5k
 ## Contributors: 
  Make a pull request to share helpful functions that you'd think would improve the project! 
 ## Testing: 
-  
+ Test with Jest. Using the CLI: 'npm run test'.
 
   ## Contact: 
  
