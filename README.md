@@ -27,6 +27,9 @@ Video of demo: [employee_summary_template_DEMO](https://drive.google.com/file/d/
 
   ## Description: 
  Application designed to generate an employee summary with employee specific parameters. Data is captured from the command line based on the user input. Once the user is finished adding members to the team, all employee data is rendered to an html page to visualize each employee summary. 
+
+![Image of DEMO application](assets/DEMO_image.png)
+
 ## Installation: 
  Clone the repo, and run 'npm install'. 
 ## Usage: 
