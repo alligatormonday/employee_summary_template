@@ -111,22 +111,3 @@ function addRole() {
 }
 
 newEmployee();
-
-// Questions to ask:
-// pre question 1: // - Inquirer prompt Manager
-// 2: What is their name?
-// 3: What is their ID?
-// 4: What is their email?
-// 5: What is their office number?
-// .then push to employee array
-// call . then function to ask Would you like to add another employee?
-// - What kind of employee do you want to add?
-// - Choices: Engineer, Intern
-// -Go back to first question
-// - If Engineer:
-// 5. Enter GitHub username?
-// 6. Would you like to add another employee?
-// - If Intern:
-// 5. Enter school
-// 6. Would you like to add another employee?
-// once no... pass array of employee objects to render html
